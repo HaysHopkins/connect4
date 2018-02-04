@@ -13,14 +13,15 @@ defmodule PhxReactExampleAppWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", PhxReactExampleAppWeb do
+    pipe_through :api
+
+    get "/hello", HelloController, :hello
+  end
+
   scope "/", PhxReactExampleAppWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/*path", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PhxReactExampleAppWeb do
-  #   pipe_through :api
-  # end
 end
