@@ -1,3 +1,7 @@
+This is my attempt at creating a generic Phoenix and React application that can serve as a base for additional projects.
+
+Any opinions/suggestions on improving this are welcome!
+
 # PhxReactExampleApp
 
 To start your Phoenix server:
@@ -8,13 +12,3 @@ To start your Phoenix server:
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
