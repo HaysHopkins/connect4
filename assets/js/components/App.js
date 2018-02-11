@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ConnectGameWrapper } from "./game_wrappers/ConnectGameWrapper";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>{this.state.message}</div>
+      <ConnectGameWrapper />
     );
   }
 }
