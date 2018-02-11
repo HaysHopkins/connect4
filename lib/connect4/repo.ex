@@ -1,5 +1,5 @@
-defmodule PhxReactExampleApp.Repo do
-  use Ecto.Repo, otp_app: :phx_react_example_app
+defmodule Connect4.Repo do
+  use Ecto.Repo, otp_app: :connect4
 
   @doc """
   Dynamically loads the repository url from the
