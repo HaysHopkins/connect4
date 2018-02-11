@@ -1,3 +1,3 @@
-defmodule PhxReactExampleAppWeb.LayoutView do
-  use PhxReactExampleAppWeb, :view
+defmodule Connect4Web.LayoutView do
+  use Connect4Web, :view
 end

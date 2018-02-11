@@ -1,3 +1,3 @@
-defmodule PhxReactExampleAppWeb.PageView do
-  use PhxReactExampleAppWeb, :view
+defmodule Connect4Web.PageView do
+  use Connect4Web, :view
 end

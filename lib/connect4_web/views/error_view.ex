@@ -1,5 +1,5 @@
-defmodule PhxReactExampleAppWeb.ErrorView do
-  use PhxReactExampleAppWeb, :view
+defmodule Connect4Web.ErrorView do
+  use Connect4Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

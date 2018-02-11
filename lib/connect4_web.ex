@@ -1,12 +1,12 @@
-defmodule PhxReactExampleAppWeb do
+defmodule Connect4Web do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PhxReactExampleAppWeb, :controller
-      use PhxReactExampleAppWeb, :view
+      use Connect4Web, :controller
+      use Connect4Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,17 +19,17 @@ defmodule PhxReactExampleAppWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PhxReactExampleAppWeb
+      use Phoenix.Controller, namespace: Connect4Web
       import Plug.Conn
-      import PhxReactExampleAppWeb.Router.Helpers
-      import PhxReactExampleAppWeb.Gettext
+      import Connect4Web.Router.Helpers
+      import Connect4Web.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/phx_react_example_app_web/templates",
-                        namespace: PhxReactExampleAppWeb
+      use Phoenix.View, root: "lib/connect4_web/templates",
+                        namespace: Connect4Web
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
@@ -37,9 +37,9 @@ defmodule PhxReactExampleAppWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhxReactExampleAppWeb.Router.Helpers
-      import PhxReactExampleAppWeb.ErrorHelpers
-      import PhxReactExampleAppWeb.Gettext
+      import Connect4Web.Router.Helpers
+      import Connect4Web.ErrorHelpers
+      import Connect4Web.Gettext
     end
   end
 
@@ -54,7 +54,7 @@ defmodule PhxReactExampleAppWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PhxReactExampleAppWeb.Gettext
+      import Connect4Web.Gettext
     end
   end
 

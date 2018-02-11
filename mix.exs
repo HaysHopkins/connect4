@@ -1,9 +1,10 @@
-defmodule PhxReactExampleApp.Mixfile do
+
+defmodule Connect4.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :phx_react_example_app,
+      app: :connect4,
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -19,7 +20,7 @@ defmodule PhxReactExampleApp.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PhxReactExampleApp.Application, []},
+      mod: {Connect4.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

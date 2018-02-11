@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :phx_react_example_app,
-  ecto_repos: [PhxReactExampleApp.Repo]
+config :connect4,
+  ecto_repos: [Connect4.Repo]
 
 # Configures the endpoint
-config :phx_react_example_app, PhxReactExampleAppWeb.Endpoint,
+config :connect4, Connect4Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "33zABClBgK9f/tViu7HLKOcZBFcwmeyKAUDxPU5GmkgyWtrD2OT7z3MVAIrkCOTp",
-  render_errors: [view: PhxReactExampleAppWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhxReactExampleApp.PubSub,
+  render_errors: [view: Connect4Web.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Connect4.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

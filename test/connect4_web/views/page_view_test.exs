@@ -1,3 +1,3 @@
-defmodule PhxReactExampleAppWeb.PageViewTest do
-  use PhxReactExampleAppWeb.ConnCase, async: true
+defmodule Connect4Web.PageViewTest do
+  use Connect4Web.ConnCase, async: true
 end

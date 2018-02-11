@@ -1,4 +1,4 @@
-defmodule PhxReactExampleAppWeb.ChannelCase do
+defmodule Connect4Web.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule PhxReactExampleAppWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint PhxReactExampleAppWeb.Endpoint
+      @endpoint Connect4Web.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhxReactExampleApp.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Connect4.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PhxReactExampleApp.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Connect4.Repo, {:shared, self()})
     end
     :ok
   end

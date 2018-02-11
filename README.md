@@ -2,7 +2,7 @@ This is my attempt at creating a generic Phoenix and React application that can 
 
 Any opinions/suggestions on improving this are welcome!
 
-# PhxReactExampleApp
+# Connect4
 
 To start your Phoenix server:
 

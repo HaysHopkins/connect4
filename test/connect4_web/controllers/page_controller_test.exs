@@ -1,5 +1,5 @@
-defmodule PhxReactExampleAppWeb.PageControllerTest do
-  use PhxReactExampleAppWeb.ConnCase
+defmodule Connect4Web.PageControllerTest do
+  use Connect4Web.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

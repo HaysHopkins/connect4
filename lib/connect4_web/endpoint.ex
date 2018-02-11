@@ -1,14 +1,14 @@
-defmodule PhxReactExampleAppWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :phx_react_example_app
+defmodule Connect4Web.Endpoint do
+  use Phoenix.Endpoint, otp_app: :connect4
 
-  socket "/socket", PhxReactExampleAppWeb.UserSocket
+  socket "/socket", Connect4Web.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :phx_react_example_app, gzip: false,
+    at: "/", from: :connect4, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,10 +35,10 @@ defmodule PhxReactExampleAppWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_phx_react_example_app_key",
+    key: "_connect4_key",
     signing_salt: "Jq2CEL7y"
 
-  plug PhxReactExampleAppWeb.Router
+  plug Connect4Web.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.
