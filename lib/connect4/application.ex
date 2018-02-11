@@ -9,7 +9,7 @@ defmodule Connect4.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Connect4.Repo, []),
+      # supervisor(Connect4.Repo, []),
       # Start the endpoint when the application starts
       supervisor(Connect4Web.Endpoint, []),
       # Start your own worker by calling: Connect4.Worker.start_link(arg1, arg2, arg3)
