@@ -8,7 +8,9 @@ import Connect4Column from "../connect4/Connect4Column";
 const height = 6;
 const width = 7;
 
-const StyledGameWrapper = styled.div``
+const StyledGameWrapper = styled.div`
+  background-color: #3671d1;
+`
 
 export default class ConnectGameWrapper extends React.Component {
   render() {

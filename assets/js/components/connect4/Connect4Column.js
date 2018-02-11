@@ -10,6 +10,10 @@ const StyledConnect4Column = styled.div`
   margin-right: 15px;
   margin-left: 15px;
   background-color: #3671d1;
+  cursor: pointer;
+  &:hover {
+    background-color: #688ecc;
+  }
 `
 
 export default class Connect4Column extends React.Component {
