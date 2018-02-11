@@ -2,19 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledGameBoard = styled.div`
+  display: flex;
   align-self: flex-center;
-  width: 100%;
-  border-style: solid;
-  border-width: 5px;
+  justify-content: center;
   margin: 30px 30px 30px 30px;
-  box-sizing: border-box;
+  background-color: #3671d1;
 `
 
-export class GameBoard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+export default class GameBoard extends React.Component {
   render() {
     return(
       <StyledGameBoard>

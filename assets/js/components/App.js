@@ -1,15 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 
-import { ConnectGameWrapper } from "./game_wrappers/ConnectGameWrapper";
+import Header from "./utilities/header/Header";
+import ConnectGameWrapper from "./game_wrappers/ConnectGameWrapper";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+const AppWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+`
 
-    this.state = {
-      message: "",
-    };
-  }
+export default class App extends React.Component {
 
   componentDidMount() {
     fetch('/api/hello').then((response) => {
@@ -21,9 +21,10 @@ class App extends React.Component {
 
   render() {
     return(
-      <ConnectGameWrapper />
+      <AppWrapper>
+        <Header />
+        <ConnectGameWrapper />
+      </AppWrapper>
     );
   }
 }
-
-export default App;

@@ -35,11 +35,11 @@ const RedCell = styled.div`
   background-color: #801515 !important;
 `
 
-const BlueCell = styled.div`
-  background-color: #231858 !important;
+const YellowCell = styled.div`
+  background-color: #f7f307 !important;
 `
 
-export class Connect4Cell extends React.Component {
+export default class Connect4Cell extends React.Component {
 
   handleAddPiece() {
     // this.props.addPiece(this.props.y, this.props.nextPlayer);

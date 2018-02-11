@@ -1,31 +1,28 @@
 import React from "react";
+import _ from "lodash";
 import styled from "styled-components";
 
-import { GameBoard } from "../game_boards/GameBoard";
-import { Connect4Column } from "../connect4/Connect4Column";
+import GameBoard from "../game_boards/GameBoard";
+import Connect4Column from "../connect4/Connect4Column";
 
-const StyledConnectWrapper = styled.div`
-  display: flex;
-  height: 600px;
-  width: 100%;
-  border-style: solid;
-  border-width: 10px;
-`
+const height = 6;
+const width = 7;
 
-export class ConnectGameWrapper extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const StyledGameWrapper = styled.div``
 
+export default class ConnectGameWrapper extends React.Component {
   render() {
-    let columns = <Connect4Column />;
+    let columns = _.times(width, (index) => {
+      return <Connect4Column key={index}
+                             height={height} />;
+    });
 
     return (
-      <StyledConnectWrapper>
+      <StyledGameWrapper>
         <GameBoard>
           {columns}
         </GameBoard>
-      </StyledConnectWrapper>
+      </StyledGameWrapper>
     )
   }
 }
