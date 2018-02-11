@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Connect4Space } from "./Connect4Space";
+import { Connect4Cell } from "./Connect4Cell";
 
 export class Connect4Column extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export class Connect4Column extends React.Component {
 
   render() {
     return (
-      <div>Hello</div>
+      <Connect4Cell />
     )
   }
 }

@@ -18,6 +18,7 @@ export class GameBoard extends React.Component {
   render() {
     return(
       <StyledGameBoard>
+        {this.props.children}
       </StyledGameBoard>
     )
   }

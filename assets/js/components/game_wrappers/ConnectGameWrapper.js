@@ -18,12 +18,12 @@ export class ConnectGameWrapper extends React.Component {
   }
 
   render() {
-    let children = <Connect4Column />;
+    let columns = <Connect4Column />;
 
     return (
       <StyledConnectWrapper>
         <GameBoard>
-          {children}
+          {columns}
         </GameBoard>
       </StyledConnectWrapper>
     )
