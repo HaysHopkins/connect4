@@ -5,4 +5,8 @@ defmodule Conntect4.Mover do
         player => MapSet.put(board[player], position)
      }
   end
+
+  def possible_moves(free) do
+    #for each column, get the lowest y value in free
+  end
 end
