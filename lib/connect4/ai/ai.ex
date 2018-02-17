@@ -23,6 +23,13 @@ defmodule Connect4.AI do
     max_value
   end
 
+  defp heuristic_value(position) do
+    case Connect4.Analyzer.winning_position(position) do
+      true -> 10
+        _  -> 0
+    end
+  end
+
   defp _compare(:negative_infinity, value), do: value
   defp _compare(max_value, value), do: Enum.max([max_value, value])
 end
