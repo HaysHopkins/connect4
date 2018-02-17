@@ -1,4 +1,6 @@
-defmodule Conntect4.Mover do
+defmodule Connect4.Mover do
+  import MapSet, only: [delete: 2, put: 2, size: 1]
+
   def move(board, player, position) do
     %{board |
         :free  => MapSet.delete(board.free, position),
@@ -7,7 +9,7 @@ defmodule Conntect4.Mover do
   end
 
   def total_moves(board) do
-
+    MapSet.size(board.state[:player]) + MapSet.size(board.state[:ai])
   end
 
   def possible_moves(free) do

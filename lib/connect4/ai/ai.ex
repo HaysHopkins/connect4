@@ -30,6 +30,6 @@ defmodule Connect4.AI do
     end
   end
 
-  defp _compare(:negative_infinity, value), do: value
-  defp _compare(max_value, value), do: Enum.max([max_value, value])
+  defp compare(:negative_infinity, value), do: value
+  defp compare(max_value, value), do: Enum.max([max_value, value])
 end
