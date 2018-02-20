@@ -21,7 +21,7 @@ defmodule Connect4.Mover do
         y when is_integer(y) ->
           new_y = Enum.min([y, elem(position, 1)])
           Map.replace!(acc, elem(position, 0), new_y)
-        y ->
+        _ ->
           Map.put(acc, elem(position, 0), elem(position, 1))
       end
     end)
