@@ -8,18 +8,17 @@ defmodule Connect4.AI do
     end)
   end
 
-  defp negamax(board, 0, perspective), do: perspective * heuristic_value(position)
+  defp negamax(board, 0, perspective), do: -perspective * heuristic_value(position)
   defp negamax(board, depth, perspective) do
     if Connect4.Analyzer.winning_position(board) do
-      perspective * heuristic_value(board)
+      -perspective * 10
     else
-      max_value = :negative_infinity
-      Enum.map(Connect4.Mover.possible_moves(board), fn(move) ->
-        value = negamax(Connect4.Mover.move(board, move), depth-1, -perspective)
-        max_value = compare(max_value, value)
-      end)
-
-      max_value
+      board
+      |> Connect4.Mover.possible_moves()
+      |> Enum.reduce(:negative_infinity, fn(move, max_value) ->
+           negamax(Connect4.Mover.move(board, move), depth-1, -perspective)
+           |> compare(max_value)
+         end)
     end
   end
 
@@ -30,6 +29,6 @@ defmodule Connect4.AI do
     end
   end
 
-  defp compare(:negative_infinity, value), do: value
-  defp compare(max_value, value), do: Enum.max([max_value, value])
+  defp compare(value, :negative_infinity), do: value
+  defp compare(value, max_value), do: Enum.max([value, max_value])
 end

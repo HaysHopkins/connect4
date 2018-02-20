@@ -8,12 +8,12 @@ defmodule Connect4.Analyzer do
 
   defp check_horizontal(true, player), do: true
   defp check_horizontal(status, player) do
-
+    #for each y value, return if not 4, check if 4 in a row
   end
 
   defp check_vertical(true, player), do: true
   defp check_vertical(status, player) do
-
+    #for each x value, return if not 4, check if 4 in a row
   end
 
   defp check_diagonal(true, player), do: true
