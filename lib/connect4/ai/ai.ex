@@ -3,24 +3,24 @@ defmodule Connect4.AI do
 
   def get_computer_move(position) do
     # Abstract this out in genserver that parallelizes
-    Enum.map(possible_moves(position), fn(move) ->
-      negamax(move, max_depth - total_moves(position), 1)
+    Enum.map(Connect4.Mover.possible_moves(position), fn(move) ->
+      negamax(move, @max_depth - Connect4.Mover.total_moves(position), 1)
     end)
   end
 
-  defp negamax(_position, 0, perspective), do: perspective * heuristic_value(position)
+  defp negamax(position, 0, perspective), do: perspective * heuristic_value(position)
   defp negamax(position, depth, perspective) do
-    if winning_position(position) do
-      return perspective * heuristic_value(position)
+    if Connect4.Analyzer.winning_position(position) do
+      perspective * heuristic_value(position)
+    else
+      max_value = :negative_infinity
+      Enum.map(Connect4.Mover.possible_moves(position), fn(move) ->
+        value = negamax(move, depth-1, -perspective)
+        max_value = compare(max_value, value)
+      end)
+
+      max_value
     end
-
-    max_value = :negative_infinity
-    Enum.map(get_next_moves(position), fn(move) ->
-      value = negamax(move, depth-1, -perspective)
-      max_value = compare(max_value, value)
-    end)
-
-    max_value
   end
 
   defp heuristic_value(position) do
