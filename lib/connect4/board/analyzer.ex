@@ -1,5 +1,8 @@
 defmodule Connect4.Analyzer do
-  def winning_position(player) do
+  def winning_position(board, 1), do: _winning_position(board.state[:ai])
+  def winning_position(board, _), do: _winning_position(board.state[:player])
+
+  defp _winning_position(player) do
     false
     |> check_horizontal(player)
     |> check_vertical(player)
