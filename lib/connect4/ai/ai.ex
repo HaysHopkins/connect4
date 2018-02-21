@@ -3,20 +3,22 @@ defmodule Connect4.AI do
 
   def get_move(board) do
     # Abstract this out in genserver that parallelizes
-    Enum.map(Connect4.Mover.possible_moves(board), fn(move) ->
-      negamax(Connect4.Mover.move(board, move), @max_depth - Connect4.Mover.total_moves(position), -1)
-    end)
+    board
+    |> Connect4.Mover.possible_moves()
+    |> Enum.map(fn(move) ->
+        negamax(Connect4.Mover.move(board, move), @max_depth - Connect4.Mover.total_moves(position), -1)
+      end)
   end
 
   defp negamax(board, 0, perspective) do
-    case Connect4.Analyzer.winning_position(board, perspective) do
+    case Connect4.Analyzer.winning_position?(board, perspective) do
       true -> perspective * 10
       _    -> 0
     end
   end
 
   defp negamax(board, depth, perspective) do
-    if Connect4.Analyzer.winning_position(board, perspective) do
+    if Connect4.Analyzer.winning_position?(board, perspective) do
       perspective * 10
     else
       board
